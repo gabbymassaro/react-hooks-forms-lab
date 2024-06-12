@@ -21,10 +21,10 @@ function ShoppingList({ items }) {
     setInput(event.target.value)
   }
 
-  const searchToDisplay = items.filter((item) => {
+  const searchToDisplay = itemsToDisplay.filter((item) => {
     if (input === "Search") return true
 
-    return item.name.includes(input)
+    return item.name.toLowerCase().includes(input.toLowerCase())
   })
 
   return (
